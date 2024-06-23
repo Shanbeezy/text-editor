@@ -25,11 +25,11 @@ module.exports = () => {
         swDest: 'src-sw.js',
       }),
       new WebpackPwaManifest({
-        fingerprings: false,
+        fingerprints: false,
         inject: true,
         name: 'Just Another Text Editor',
         short_name: 'J.A.T.E',
-        description: 'Taks notes with JavaScript syntax hightlighting!',
+        description: 'Takes notes with JavaScript syntax hightlighting!',
         background_color: '#225ca3',
         theme_color: '#225ca3',
         start_url: '/',
@@ -57,7 +57,7 @@ module.exports = () => {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/present-env'],
+              presets: ['@babel/preset-env'],
               plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
             },
           },

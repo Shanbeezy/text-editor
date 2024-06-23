@@ -34,7 +34,7 @@ export const getDb = async () => {
   result
     ? console.log('Data retrieved from the database', result.value)
     : console.log('Data not found in the database');
-  // Check to see if the variable is defined and if it is, return it.  See MDN Docs on Optional Chaining (http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+  // Check to see if the variable is defined and if it is, return it. 
   return result?.value;
 };
 
