@@ -1,6 +1,6 @@
 import { Workbox } from 'workbox-window';
-import Editor from './js/editor';
-import './database';
+import Editor from './editor';
+import '../database';
 import '../css/style.css';
 
 const main = document.querySelector('#main');
@@ -27,7 +27,9 @@ if (typeof editor === 'undefined') {
 if ('serviceWorker' in navigator) {
   // register workbox service worker
   const workboxSW = new Workbox('/src-sw.js');
-  workboxSW.register().catch(error => {
+  workboxSW.register().then(() => {
+    console.log('Service Worker registered successfully.');
+  }).catch(error => {
     console.error('Service Worker registration failed:', error);
   });
 } else {
